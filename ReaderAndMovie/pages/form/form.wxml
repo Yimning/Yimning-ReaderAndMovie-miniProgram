@@ -1,0 +1,62 @@
+<view class="page">
+	<view class="journey-container" bindtap="onTap">
+		<text  class="page_hd" >Hello, Yimning</text>
+		<text  class="page_desc" >表单</text>
+	</view>
+
+	<form class="page_hd" bindsubmit="formSubmit" bindreset="formReset">
+
+		<view class="section section_gap">
+			<view class="section_title">Switch</view>
+			<switch name="switch" type="swicth" checked="{{false}}" color="yellow" bindchange="onBindChange" />
+		</view>
+
+		<view class="section section_gap">
+			<view class="section_title">Slider</view>
+			<slider min="0" max="500" step="10" value="50" name="slider" show-value="{{true}}"></slider>
+		</view>
+
+		<view class="section">
+			<view class="section_title">Slider</view>
+            <text></text>
+			<input type="" name="input" placeholder="please input here"></input>
+		</view>
+
+		<!-- 单选 -->
+		<view class="section">
+			<view class="section_title">Radio</view>
+			<radio-group name="radio_group" bindchange="onRadioChange">
+				<label>
+					<radio value="radio1" /> value=0 </label>
+				<label>
+					<radio value="radio2" /> value=1 </label>
+			</radio-group>
+		</view>
+
+		<!-- 多选 -->
+		<view class="section ">
+			<view class="section_title">Checkbox</view>
+			<checkbox-group name="checkbox" bindchange="onCheckboxChange">
+				<label>
+					<radio value="checkbox1" /> checkbox1 </label>
+				<label>
+					<radio value="checkbox2" /> checkbox2 </label>
+				<label>
+					<radio value="checkbox3" /> checkbox3 </label>
+				<label>
+					<radio value="checkbox4" /> checkbox4 </label>
+			</checkbox-group>
+		</view>
+		<view>
+			<label class="checkbox" wx:for="{{items}}">
+				<checkbox name="checkbox1" bindtap="checkClick" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+			</label>
+		</view>
+
+		<view class="btn_area">
+			<button form-type="submit">Submit</button>
+			<button form-type="reset">Reset</button>
+		</view>
+
+	</form>
+</view>
